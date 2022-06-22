@@ -1,0 +1,1246 @@
+/* ОБЩИЕ НАСТРОЙКИ */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #100e19;
+}
+
+.yun-container {
+    height: 100%;
+    display: flexbox;
+}
+
+/* HEADER */
+
+nav {
+    height: 86px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_container > img,
+.nav_container > a {
+    padding:10px 15px;
+}
+
+.nav_links {
+    text-decoration: none;
+    color: rgba(136, 136, 136);
+    font-family: 'Radio Canada', sans-serif;
+}
+.nav_links:hover {
+    color: #ffffff;
+    cursor: pointer;
+    background-color: rgba(136, 136, 136, 0.5);
+    border-radius: 10px;
+}
+
+
+.nav_container > a.user {
+    padding:8px 15px;
+    border: 2px solid rgba(245, 193, 10);
+    color: rgba(136, 136, 136);
+    border-radius: 10px;
+    margin: 0px 5px;
+}
+.nav_container > a.user:hover {
+    border: 2px solid white;
+    border-radius: 10px;
+    color: rgba(245, 193, 10);
+}
+
+#mini_nav_shower {
+    display: none;
+}
+
+@keyframes ani {
+    0% {transform: translateX(-150%);}
+    100% {transform: translateY(0);}
+}
+@keyframes bani {
+    0% {transform: translateX(150%);}
+    100% {transform: translateY(0);}
+}
+/* Search */
+
+.search-box{
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    margin: 0px 13px 0px 15px;
+    padding:10px 15px;
+}
+.input-search{
+    height: 39px;
+    width: 50px;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    background-color: transparent;
+    padding-right: 40px;
+    color:#fff;
+}
+.input-search::placeholder{
+    color:rgba(245, 193, 10, 0.5);
+    font-size: 18px;
+    font-weight: 100;
+    font-family: 'Radio Canada', sans-serif;
+}
+.btn-search{
+    width: 50px;
+    height: 39px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border: 2px solid rgba(245, 193, 10);
+    border-radius: 10px;
+    position: absolute;
+    right: 0px;
+    color:rgba(136, 136, 136);
+    background-color:transparent;
+    pointer-events: painted;  
+}
+
+.btn-search:hover {
+    color: rgba(245, 193, 10);
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgba(136, 136, 136, 0.5);
+}
+
+.btn-search:hover ~ .input-search{
+    width: 300px;
+    border-radius: 10px 0px 0px 10px;
+    background-color: transparent;
+    border-left:1px solid rgba(245, 193, 10);
+    border-top:1px solid rgba(245, 193, 10);
+    border-bottom:1px solid rgba(245, 193, 10);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+.input-search:hover{
+    width: 300px;
+    border-radius: 10px 0px 0px 10px;
+    background-color: transparent;
+    border-left:1px solid rgba(245, 193, 10);
+    border-top:1px solid rgba(245, 193, 10);
+    border-bottom:1px solid rgba(245, 193, 10);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+/* films secondary menu */
+
+.films_secmenu {
+    display: flex;
+    justify-content: space-around;
+    min-width: auto;
+    border-top: 1px solid rgba(136, 136, 136);
+    background-color: #1a172a;
+    border-radius: 0px 0px 20px 20px;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.row_films_secmenu {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 49%;
+    padding: 45px 30px 45px 30px;
+    justify-content: space-around;
+}
+
+
+.col_films_secmenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.col_films_secmenu a {
+    color:rgba(136, 136, 136);
+    text-decoration: none;
+}
+.col_films_secmenu p {
+    font-weight: bold;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.col_films_secmenu a:hover {
+    color: #ffffff;
+}
+.col_films_secmenu a:hover i {
+    color: rgba(245, 193, 10);
+}
+
+.row_films_secmenu img {
+    border-radius: 10px;
+}
+
+.row_films_secmenu_trailer {
+    border-radius: 10px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.row_films_secmenu_trailer_link {
+    position: absolute;
+    color: #ffffff;
+    left: 25%;
+    top: 65%;
+    font-size: 18px;
+    font-weight: bold;
+    display: none;
+}
+
+/* serials secondary menu */
+
+.serials_secmenu {
+    display: flex;
+    justify-content: space-around;
+    min-width: auto;
+    border-top: 1px solid rgba(136, 136, 136);
+    background-color: #1a172a;
+    border-radius: 0px 0px 20px 20px;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.row_serials_secmenu {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 49%;
+    padding: 45px 30px 45px 30px;
+    justify-content: space-around;
+}
+
+
+.col_serials_secmenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.col_serials_secmenu a {
+    color:rgba(136, 136, 136);
+    text-decoration: none;
+}
+.col_serials_secmenu p {
+    font-weight: bold;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.col_serials_secmenu a:hover {
+    color: #ffffff;
+}
+.col_serials_secmenu a:hover i {
+    color: rgba(245, 193, 10);
+}
+
+.row_serials_secmenu img {
+    border-radius: 10px;
+}
+
+.row_serials_secmenu_trailer {
+    border-radius: 10px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.row_serials_secmenu_trailer_link {
+    position: absolute;
+    color: #ffffff;
+    left: 36%;
+    top: 65%;
+    font-size: 18px;
+    font-weight: bold;
+    display: none;
+}
+
+/* constructor secondary menu */
+
+.row_films_secmenu_trailer_div {
+    position: relative;
+}
+.row_films_secmenu_trailer_div:hover .row_films_secmenu_trailer{
+    opacity: 0.2;
+}
+.row_films_secmenu_trailer_div:hover .row_films_secmenu_trailer_link{
+    display: block;
+}
+
+.row_serials_secmenu_trailer_div {
+    position: relative;
+}
+.row_serials_secmenu_trailer_div:hover .row_serials_secmenu_trailer{
+    opacity: 0.2;
+}
+.row_serials_secmenu_trailer_div:hover .row_serials_secmenu_trailer_link{
+    display: block;
+}
+
+.is-active  {
+    display: flex;
+    justify-content: space-around;
+    min-width: auto;
+    border-top: 1px solid rgba(136, 136, 136);
+    background-color: #1a172a;
+    border-radius: 0px 0px 20px 20px;
+    height: 450px;
+    padding: 10px 0;
+}
+
+.offset {
+    width: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.offset hr{
+    height: 80%;
+    width: 1px;
+    color: rgba(136, 136, 136, 0.5);
+}
+
+.percentage sup {
+    font-size: 8px;
+}
+
+.percentage {
+    font-family: "Source Sans Pro", Arial, sans-serif;
+}
+/* film_card */
+.swiper-slide {
+    width: 100%;
+}
+
+.film_card {
+    width: 150px;
+    min-height: 275px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.film_card_content {
+    width: 100%;
+    height: 225px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.film_card_image {
+    width: 150px;
+    opacity: 1;
+    transform: scale(1);
+    transition: 0.5s;
+}
+
+.film_card_name {
+    background-color: #55506a00;
+    min-height: 50px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 10px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.film_card_name_text{
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(136, 136, 136);
+    word-wrap: break-word;
+    margin: 2px;
+}
+
+
+.film_card_content:hover .film_card_image{
+    opacity: 0.2;
+    transform: scale(1.1);
+    transition:all 0.5s;
+    cursor: pointer;
+}
+
+.film_card_content:hover .film_card_mini_buttons{
+    opacity: 1;
+}
+
+.film_card_content:hover .film_card_mini_info {
+    opacity: 1;
+}
+
+.film_card_mini_buttons {
+    display: flex;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    transition: 0.5s;
+    cursor: crosshair;
+}
+.film_card_mini_buttons  i {
+    margin: 10px 5px;
+    font-size: 22px;
+    color: rgba(216, 216, 216);
+}
+
+.film_card_mini_info {
+    display: flex;
+    opacity: 0;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    flex-direction: column;
+    top: 30%;
+    right: 5%;
+    z-index: 1;
+    transition: 0.5s;
+    pointer-events: none;
+    width: inherit;
+    max-width: 140px;
+}
+.film_card_mini_info div {
+    margin: 5px 0px;
+}
+.film_card_mini_info_country {
+    max-height: 25px;
+    height: 25px;
+    width: 130px;
+    max-width: 130px;
+    display: flex;
+    align-items: center;
+}
+.film_card_mini_info_country_p {
+    color: rgba(216, 216, 216);
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: normal;
+}
+.film_card_mini_info_time_p {
+    color: rgba(136, 136, 136);
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-size: 14px;
+}
+.film_card_mini_info_date_p {
+    color: rgba(136, 136, 136);
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* progressbar */
+.counter {
+    display: inline-flex;
+    cursor:pointer;
+    width:50px;
+    height:50px;
+    max-width:100%;
+    position:relative;
+    justify-content:center;
+    align-items:center;
+    font-size: 15px;
+    font-weight: 700;
+    transition: height .2s ease-in-out;
+    background: rgba(0, 0, 0, 0);
+    border-radius:50%;
+    color: rgb(210, 210, 210);
+}
+.percentage {
+    position:absolute;
+    text-align:center;
+    top:50%;
+    left:0;
+    right:0;
+    vertical-align:middle;
+    transform:translate3d(0,-50%,0);
+}
+canvas {
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+/* recomendationSwiper */
+.recomendationSwiper{
+    margin: 30px 0px;
+}
+
+.recomendationSwiper .swiper-wrapper {
+    padding-left: 45px;
+}
+.recomendationSwiper > .swiper-scrollbar >.swiper-scrollbar-drag {
+    background: rgba(245, 193, 10, 0.5);
+}
+.recomendationSwiper > .swiper-button-next,
+.recomendationSwiper > .swiper-button-prev {
+    color: rgba(245, 193, 10);
+}
+
+
+/* popular_h2 */
+.popular_h2 {
+    color: rgba(136, 136, 136);
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 45px;
+}
+
+
+/* popularSwiper */
+.popularSwiper {
+    margin: 30px 0px;
+}
+.popularSwiperVideo {
+    height: 400px;
+    position: relative;
+}
+.popularSwiperVideo video {
+    height: 100%;
+}
+.popularSwiper .swiper-wrapper .swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+.popularSwiperVideoPlayer {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    max-width: 50%;
+    position: absolute;
+    top: 75%;
+    left: 30px;
+    z-index: 1;
+    background-color: #1a172aa7;
+    border-radius: 10px;
+    transition: all 1s;
+}
+.popularSwiperVideoPlayer button{
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    background: #1a172a00;
+    border: none;
+    color: rgba(245, 193, 10);
+    margin: 5px;
+    cursor: pointer;
+}
+.popularSwiperVideoPlayerH3 {
+    color: rgba(245, 193, 10);
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    margin: 10px;
+    opacity: 1;
+    transition: all 1s;
+}
+
+.popularSwiperVideoPlayerHiddenH3 {
+    opacity: 0;
+    background-color: #1a172a20;
+    transition: all 1s;
+}
+
+.popularSwiperVideoPlayerHidden {
+    background-color: #1a172a20;
+    transition: all 1s;
+}
+.popularSwiperVideoPlayerControlers{
+    display: flex;
+    align-items: center;
+}
+.popularSwiperVideoPlayerSlider {
+    width: auto;
+    color: rgba(245, 193, 10);
+    height: 0.5rem;
+    opacity: 0;
+    transition: all 1s;
+}
+.popularSwiperVideoPlayerSliderHidden {
+    opacity: 1;
+    transition: all 1s;
+}
+.timer {
+    color: rgba(245, 193, 10);
+    margin: 0px 5px;
+    font-family: 'Lobster', cursive;
+    opacity: 0;
+    transition: all 1s;
+}
+.timerHidden {
+    opacity: 1;
+    transition: all 1s;
+}
+
+
+
+/* tvSwiper */
+.tvSwiper{
+    margin: 30px 0px;
+}
+
+.tvSwiper .swiper-wrapper {
+    padding-left: 45px;
+}
+.tvSwiper > .swiper-scrollbar >.swiper-scrollbar-drag {
+    background: rgba(245, 193, 10, 0.5);
+}
+.tvSwiper > .swiper-button-next,
+.tvSwiper > .swiper-button-prev {
+    color: rgba(245, 193, 10);
+}
+/* searchSwiper */
+/* .searchSwiper{
+    margin: 30px 0px;
+} */
+
+.searchSwiper .swiper-wrapper {
+    padding-left: 45px;
+}
+.searchSwiper > .swiper-scrollbar >.swiper-scrollbar-drag {
+    background: rgba(245, 193, 10, 0.5);
+}
+.searchSwiper > .swiper-button-next,
+.searchSwiper > .swiper-button-prev {
+    color: rgba(245, 193, 10);
+}
+/*Chrome*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+      width: 80px;
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+    }
+    
+    input[type='range']::-webkit-slider-runnable-track {
+      height: 10px;
+      -webkit-appearance: none;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    input[type='range']::-webkit-slider-thumb {
+      width: 20px;
+      -webkit-appearance: none;
+      height: 20px;
+      cursor: pointer;
+      border-radius: 50%;
+      background: rgba(245, 193, 10);
+      margin-top: -5px;
+    }
+
+}
+/** FF*/
+input[type="range"]::-moz-range-progress {
+  background-color: #43e5f7; 
+}
+input[type="range"]::-moz-range-track {  
+  background-color: #9a905d;
+}
+/* IE*/
+input[type="range"]::-ms-fill-lower {
+  background-color: #43e5f7; 
+}
+input[type="range"]::-ms-fill-upper {  
+  background-color: #9a905d;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* xs (<=543px) */
+@media (max-width: 575px) { 
+    .yun-container {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* HEADER */
+    .search-box {
+        display: none;
+    }
+
+    .mini_link {
+        display: none;
+    }
+
+    .nav_container > img,
+    .nav_container > a {
+        padding:10px 5px;
+    }
+
+    .nav_container > a.user {
+        padding:8px 10px;
+        margin: 0px 3px;
+    }
+
+    .btn-search{
+        width: 40px;
+    }
+
+    .search-box {
+        margin: 0px 4px 0px 10px;
+    }
+
+    #mini_nav_shower {
+        display: block;
+        color: rgba(136, 136, 136);
+    }
+
+    .dropdown {
+        margin: 0px 5px;
+        padding: 8px 10px;
+        border: 2px solid rgba(245, 193, 10);
+        border-radius: 10px;
+    }
+
+    .dropdown-content {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: #f1f1f100;
+        min-width: auto;
+        z-index: 1;
+        transform: translateX(-150%);
+        animation: ani 1s forwards;
+    }
+    .dropdown-content-none{
+        display: none;
+        flex-direction: column;
+        background-color: rgba(245, 193, 10, 0);
+        min-width: auto;
+        z-index: 1;
+    }
+
+    .dropdown-content-animation {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        flex-direction: row;
+        background-color: rgba(245, 193, 10, 0);
+        min-width: auto;
+        z-index: 1;
+        transform: translateX(0%);
+        animation: bani 1s reverse;
+    }
+
+    #dropdown-content a {
+        color: white;
+        font-size: 12px;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        border-bottom: 1px solid rgba(136, 136, 136, 0.5);
+    }
+
+    .btn_nav_link{
+        background-color: #100e19;
+    }
+    #dropdown-content>a:hover {background-color: #100e19de;border-radius: 0px;}
+
+    .dropdown:focus ~ .dropdown-content {display: flex;}
+
+    /* films_secmenu */
+    #row_films_secmenu_second {
+        display: none;
+    }
+
+    .row_films_secmenu {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 460px;
+        max-width: 460px;
+        padding: 20px 30px;
+    }
+    .col_films_secmenu a,
+    .col_films_secmenu p {
+        font-size: 14px;
+    }
+
+    /* serials_secmenu */
+    #row_serials_secmenu_second {
+        display: none;
+    }
+
+    .row_serials_secmenu {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 460px;
+        max-width: 460px;
+        padding: 20px 30px;
+    }
+    .col_serials_secmenu a,
+    .col_serials_secmenu p {
+        font-size: 14px;
+    }
+    
+
+    /* film cards */
+    .film_card {
+        width: 100px;
+        min-height: 183px;
+    }
+    
+    .film_card_content {
+        width: 100%;
+        height: 150px;
+    }
+    
+    .film_card_image {
+        width: 100px;
+    }
+    
+    .film_card_name {
+        min-height: 33px;
+        width: 100px;
+        padding: 6px 6px;
+        border-radius: 0px 0px 10px 10px;
+    }
+    
+    .film_card_name_text{
+        font-size: 10px;
+        margin: 2px;
+    }
+    .film_card_mini_buttons  i {
+        margin: 6px 3px;
+        font-size: 15px;
+        color: rgba(216, 216, 216);
+    }
+    
+    .film_card_mini_info {
+        top: 30%;
+        right: 5%;
+        z-index: 1;
+        max-width: 93px;
+    }
+    .film_card_mini_info div {
+        margin: 3px 0px 0px 0px;
+    }
+    .film_card_mini_info_country {
+        max-height: 17px;
+        height: 17px;
+        width: 86px;
+        max-width: 86px;
+    }
+    .film_card_mini_info_country_p {
+        font-size: 9px;
+    }
+    .film_card_mini_info_time_p {
+        font-size: 9px;
+    }
+    .film_card_mini_info_date_p {
+        font-size: 9px;
+    }
+
+    /* progressbar */
+    .counter {
+        width:33px;
+        height:33px;
+        font-size: 10px;
+    }
+
+    .percentage sup {
+        font-size: 5px;
+    }
+
+    /* swiper */
+    .recomendationSwiper .swiper-wrapper {
+        padding-left: 0;
+    }
+
+    .tvSwiper .swiper-wrapper {
+        padding-left: 0;
+    }
+
+    .searchSwiper .swiper-wrapper {
+        padding-left: 0;
+    }
+
+    /* popular_h2 */
+    .popular_h2 {
+        font-size: 12px;
+    }
+
+    /* popularSwiper */
+    .popularSwiperVideo {
+        height:160px;
+        position: relative;
+    }
+}
+    
+/* sm (>=576 и <=767) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .yun-container {
+        width: 560px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* HEADER */
+    
+    .mini_link {
+        display: none;
+    }
+    
+    #mini_nav_shower {
+        display: block;
+        color: rgba(136, 136, 136);
+        padding: 8px 10px;
+        border: 2px solid rgba(245, 193, 10);
+        border-radius: 10px;
+    }
+
+    .dropdown-content {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        flex-direction: row;
+        background-color: #f1f1f100;
+        min-width: auto;
+        z-index: 1;
+        transform: translateX(-150%);
+        animation: ani 1s forwards;
+    }
+    .dropdown-content-none{
+        display: none;
+        flex-direction: column;
+        background-color: #f1f1f100;
+        min-width: auto;
+        z-index: 1;
+    }
+
+    .dropdown-content-animation {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        flex-direction: row;
+        background-color: #f1f1f100;
+        min-width: auto;
+        z-index: 1;
+        transform: translateX(0%);
+        animation: bani 1s reverse;
+    }
+    #dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        border-bottom: 1px solid rgba(136, 136, 136, 0.5);
+    }
+    #dropdown-content>a:hover {background-color: #292732de;border-radius: 10px 10px 0px 0px;}
+
+    #dropdown-content a.search_mini {
+        display: none;
+    }
+
+    .dropdown:focus .dropdown-content {display: flex;}
+    
+    .btn_nav_link{
+        background-color: #100e19;
+    }
+
+    /* search */
+    .btn-search:hover ~ .input-search{
+        width: 220px;
+        transition: all 500ms cubic-bezier(0, 0.110, 0.35, 1);
+    }
+    .input-search:hover{
+        width: 220px;
+        font-size: 14px;
+    }
+    .input-search:hover{
+        transition: all 500ms cubic-bezier(0, 0.110, 0.35, 1);
+    }
+    .input-search::placeholder{
+        font-size: 15px;
+        font-weight: 100;
+        font-family: 'Radio Canada', sans-serif;
+    }
+    .dropdown {
+        cursor: pointer;
+    }
+    #mini_nav_shower:hover {
+        background-color: rgba(136, 136, 136, 0.5);
+        color: rgba(245, 193, 10);
+        border-color: #ffffff;
+    }
+
+    /* films_secmenu */
+    #row_films_secmenu_second {
+        display: none;
+    }
+
+    .row_films_secmenu {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 460px;
+        max-width: 460px;
+    }
+
+    /* serials_secmenu */
+    #row_serials_secmenu_second {
+        display: none;
+    }
+
+    .row_serials_secmenu {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 460px;
+        max-width: 460px;
+    }
+
+    /* recomendationSwiper */
+    .recomendationSwiper .swiper-wrapper {
+        padding-left: 15px;
+    }
+    .recomendationSwiper > .swiper-scrollbar >.swiper-scrollbar-drag {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    /* popularSwiper */
+    .popularSwiperVideo {
+        height: 250px;
+        position: relative;
+    }
+
+    /* tvSwiper */
+    .tvSwiper .swiper-wrapper {
+        padding-left: 15px;
+    }
+    .tvSwiper > .swiper-scrollbar >.swiper-scrollbar-drag {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    /* searchSwiper */
+    .searchSwiper .swiper-wrapper {
+        padding-left: 15px;
+    }
+    .searchSwiper > .swiper-scrollbar >.swiper-scrollbar-drag {
+        background: rgba(255, 255, 255, 0);
+    }
+}
+/* md (>=768 и <=991) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .yun-container {
+        width: 760px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* HEADER */
+    .nav_container > img,
+    .nav_container > a {
+        padding:10px 10px;
+    }
+    #dropdown-content {
+        display: none;
+    }
+
+    /* search */
+    .btn-search:hover ~ .input-search{
+        width: 200px;
+        transition: all 500ms cubic-bezier(0, 0.110, 0.35, 1);
+    }
+    .input-search:hover{
+        width: 200px;
+    }
+    .input-search:hover{
+        transition: all 500ms cubic-bezier(0, 0.110, 0.35, 1);
+    }
+    .input-search::placeholder{
+        font-size: 15px;
+        font-weight: 100;
+        font-family: 'Radio Canada', sans-serif;
+    }
+
+    /* films_secmenu */
+    .row_films_secmenu_logo {
+        height: 52px;
+    }
+    .row_films_secmenu_trailer {
+        height: 170px;
+    }
+    .row_films_secmenu_trailer_link {
+        left: 15%;
+        top: 50%;
+    }
+
+    /* serials_secmenu */
+    .row_serials_secmenu_logo {
+        height: 52px;
+    }
+    .row_serials_secmenu_trailer {
+        height: 170px;
+    }
+    .row_serials_secmenu_trailer_link {
+        left: 30%;
+        top: 45%;
+    }
+
+    /* recomendationSwiper */
+    .recomendationSwiper > .swiper-scrollbar >.swiper-scrollbar-drag {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    /* popularSwiper */
+    .popularSwiperVideo {
+        height: 300px;
+        position: relative;
+    }
+
+    /* tvSwiper */
+    .tvSwiper > .swiper-scrollbar >.swiper-scrollbar-drag {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    /* searchSwiper */
+    .searchSwiper > .swiper-scrollbar >.swiper-scrollbar-drag {
+        background: rgba(255, 255, 255, 0);
+    }
+}
+/* lg (>=992 и <=1249) */
+@media (min-width: 992px) and (max-width: 1249px) {
+    .yun-container {
+        width: 970px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #dropdown-content {
+        display: none;
+    }
+
+    /* search */
+    .btn-search:hover ~ .input-search{
+        width: 250px;
+    }
+    .input-search:hover{
+        width: 250px;
+    }
+
+    /* films_secmenu */
+    .row_films_secmenu_logo {
+        height: 68px;
+    }
+    .row_films_secmenu_trailer {
+        height: 230px;
+    }
+
+    /* serials_secmenu */
+    .row_serials_secmenu_logo {
+        height: 66px;
+    }
+    .row_serials_secmenu_trailer {
+        height: 220px;
+    }
+
+    /* recomendationSwiper */
+    .recomendationSwiper > .swiper-scrollbar >.swiper-scrollbar-drag {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    /* popularSwiper */
+    .popularSwiperVideo {
+        height: 350px;
+        position: relative;
+    }
+
+    /* tvSwiper */
+    .tvSwiper > .swiper-scrollbar >.swiper-scrollbar-drag {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    /* searchSwiper */
+    .searchSwiper > .swiper-scrollbar >.swiper-scrollbar-drag {
+        background: rgba(255, 255, 255, 0);
+    }
+}
+/* xl (>=1250) */
+@media (min-width: 1250px) { 
+    .yun-container {
+        width: 1220px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    
+    #dropdown-content {
+        display: none;
+    }
+
+    .row_films_secmenu_logo {
+        height: 70px;
+    }
+    .row_serials_secmenu_logo {
+        height: 70px;
+    }
+
+    /* recomendationSwiper */
+    .recomendationSwiper > .swiper-scrollbar >.swiper-scrollbar-drag {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    /* tvSwiper */
+    .tvSwiper > .swiper-scrollbar >.swiper-scrollbar-drag {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    /* searchSwiper */
+    .searchSwiper > .swiper-scrollbar >.swiper-scrollbar-drag {
+        background: rgba(255, 255, 255, 0);
+    }
+}

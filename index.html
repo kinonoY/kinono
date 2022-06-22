@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinono - all cinema there!</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="SHORTCUT ICON" href="./images/favicon.ico" type="image/x-icon">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Radio+Canada:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <!-- scripts -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/cd792d1cdd.js" crossorigin="anonymous"></script>
+    <script defer src="./js/index.js"></script>
+    <script defer src="./js/progressbar.js"></script>
+</head>
+<body>
+<div class="yun-container">
+    <!-- navigator-desktop -->
+        <nav>
+            <div class="nav_container">
+                <img src="./images/logo.png" height="68" alt="site logo" class="logoOfSite">
+                <div class="dropdown">
+                    <div id="mini_nav_shower"><i class="fa-solid fa-bars fa-xl"></i></div>
+                </div>
+                <a href="#" id="film_shower_button" class="nav_links mini_link">Films</a>
+                <a href="#" id="serial_shower_button"class="nav_links mini_link">Seriales</a>
+                <a class="nav_links mini_link">Actors</a>
+                <a class="nav_links mini_link">Other</a>
+            </div>
+            <div class="nav_container">
+                <div class="search-box">
+                    <button class="btn-search"><i class="fas fa-search"></i></button>
+                    <input type="text" class="input-search" placeholder="Type to Search...">
+                </div>
+                <a class="nav_links user"><i class="fa-solid fa-bell"></i></a>
+                <a href="#" class="nav_links user"><i class="fa-solid fa-user"></i></a>
+            </div>
+        </nav>
+        <!-- navigator for phone -->
+        <div class="dropdown-content-none" id="dropdown-content">
+            <a id="film_shower_button_mini" href="#" class="nav_links btn_nav_link">Films</a>
+            <a id="serial_shower_button_mini" class="nav_links btn_nav_link">Seriales</a>
+            <a class="nav_links btn_nav_link">Actors</a>
+            <a class="nav_links btn_nav_link">Other</a>
+            <a class="nav_links btn_nav_link search_mini" id="search_mini">Search</a>
+        </div>
+        <div class="swiper dlin searchSwiper">
+            <div id="search" class="swiper-wrapper">
+                <template id="swiper-slide-template">
+                    <div class="swiper-slide">
+                        <div class="film_card">
+                            <div class="film_card_content">
+                                <img class="film_card_image" src="" alt="film_image">
+                                <div class="film_card_mini">
+                                    <div class="film_card_mini_buttons">
+                                        <div class="film_card_mini_buttons_izbrannoye"><i class="fa-regular fa-bookmark"></i></div>
+                                        <div class="film_card_mini_buttons_poxojeyee"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                                    </div>
+                                    <div class="film_card_mini_info">
+                                        <div class="counter" data-cp-percentage="" data-cp-color="">
+                                            <span class="percentage"></span>
+                                            <canvas class="circleProgressCanvas" width="50" height="50" style="height: 150px; width: 150px;"></canvas>
+                                        </div>
+                                        <div class="film_card_mini_info_country">
+                                            <p class="film_card_mini_info_country_p"></p>
+                                        </div>
+                                        <div class="film_card_mini_info_date">
+                                            <time class="film_card_mini_info_date_p"></time><p class="film_card_mini_info_time_p"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film_card_name"><a class="film_card_name_text"></a></div>
+                        </div>
+                    </div>
+                </template>
+                <template id="swiper-slide-template-person">
+                    <div class="swiper-slide">
+                        <div class="film_card">
+                            <div class="film_card_content">
+                                <img class="film_card_image" src="" alt="film_image">
+                                <div class="film_card_mini">
+                                    <div class="film_card_mini_buttons">
+                                        <div class="film_card_mini_buttons_izbrannoye"><i class="fa-regular fa-bookmark"></i></div>
+                                        <div class="film_card_mini_buttons_poxojeyee"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                                    </div>
+                                    <div class="film_card_mini_info">
+                                        <div class="film_card_mini_info_country">
+                                            <p class="film_card_mini_info_country_p"></p>
+                                        </div>
+                                        <div class="film_card_mini_info_date">
+                                            <time class="film_card_mini_info_date_p"></time><p class="film_card_mini_info_time_p"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="film_card_name"><a class="film_card_name_text"></a></div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            <div class="swiper-scrollbar"></div>
+            <div id="searchSwiperButtonNext" class="swiper-button-next"></div>
+            <div id="searchSwiperButtonPrev" class="swiper-button-prev"></div>
+        </div>
+        <div class="films_secmenu">
+            <div class="row_films_secmenu">
+                <div class="col_films_secmenu">
+                    <p>Genres</p>
+                    <a href=""><i class="fa-solid fa-hat-cowboy"></i>   Western</a>
+                    <a href=""><i class="fa-solid fa-person-rifle"></i> Wartime</a>
+                    <a href=""><i class="fa-solid fa-user-secret"></i>  Detective</a>
+                    <a href=""><i class="fa-solid fa-book"></i>  Documentary</a>
+                    <a href=""><i class="fa-solid fa-masks-theater"></i>    Dramatical piece</a>
+                    <a href=""><i class="fa-solid fa-timeline"></i>  History</a>
+                    <a href=""><i class="fa-solid fa-face-laugh-squint"></i>    Comedy</a>
+                    <a href=""><i class="fa-solid fa-handcuffs"></i>    Criminal</a>
+                </div>
+                <div class="col_films_secmenu">
+                    <a href=""><i class="fa-solid fa-music"></i>   Musical</a>
+                    <a href=""><i class="fa-solid fa-child"></i>   Cartoon</a>
+                    <a href=""><i class="fa-solid fa-map"></i>   Adventure</a>
+                    <a href=""><i class="fa-solid fa-people-roof"></i>   Family</a>
+                    <a href=""><i class="fa-solid fa-tv"></i>   TV movie</a>
+                    <a href=""><i class="fa-solid fa-people-robbery"></i>   Thriller</a>
+                    <a href=""><i class="fa-solid fa-ghost"></i>   Horror</a>
+                    <a href=""><i class="fa-solid fa-robot"></i>   Fantasstic</a>
+                    <a href=""><i class="fa-solid fa-wand-sparkles"></i>   Fantasy</a>
+                </div>
+            </div>
+            <div id="row_films_secmenu_second" class="offset "><hr></div>
+            <div id="row_films_secmenu_second" class="row_films_secmenu ">
+                <img class="row_films_secmenu_logo" src="./images/kinono.png" alt="kinono-logo" height="89px">
+                <div class="row_films_secmenu_trailer_div">
+                    <video autoplay loop muted class="row_films_secmenu_trailer" src="./images/tras.webm" alt="kinono-trailer" height="240px"></video>
+                    <a class="row_films_secmenu_trailer_link">Spider-Man: No Way Home </a>
+                </div>
+            </div>
+        </div>
+        <div class="serials_secmenu">
+            <div class="row_serials_secmenu">
+                <div class="col_serials_secmenu">
+                    <p>Genres</p>
+                    <a href=""><i class="fa-solid fa-map"></i>   Action & Adventure</a>
+                    <a href=""><i class="fa-solid fa-person-military-rifle"></i> War and Politics</a>
+                    <a href=""><i class="fa-solid fa-child"></i>  Childish</a>
+                    <a href=""><i class="fa-solid fa-compact-disc"></i>  Soap opera</a>
+                    <a href=""><i class="fa-brands fa-galactic-republic"></i>   Sci-Fi and Fantasy</a>
+                    <a href=""><i class="fa-solid fa-newspaper"></i>  News</a>
+                    <a href=""><i class="fa-solid fa-person-booth"></i>    Reality show</a>
+                    <a href=""><i class="fa-solid fa-person-chalkboard"></i>    Talk show</a>
+                </div>
+                <div class="col_serials_secmenu">
+                    <a href=""><i class="fa-solid fa-hat-cowboy"></i>   Western</a>
+                    <a href=""><i class="fa-solid fa-user-secret"></i>   Detective</a>
+                    <a href=""><i class="fa-solid fa-masks-theater"></i>   Dramatical piece</a>
+                    <a href=""><i class="fa-solid fa-book"></i>   Documentary</a>
+                    <a href=""><i class="fa-solid fa-face-laugh-squint"></i>   Comedy</a>
+                    <a href=""><i class="fa-solid fa-handcuffs"></i>   Criminal</a>
+                    <a href=""><i class="fa-solid fa-children"></i>   Cartoon</a>
+                    <a href=""><i class="fa-solid fa-people-roof"></i>   Family</a>
+                </div>
+            </div>
+            <div id="row_serials_secmenu_second" class="offset "><hr></div>
+            <div id="row_serials_secmenu_second" class="row_serials_secmenu ">
+                <img class="row_serials_secmenu_logo" src="./images/kinono.png" alt="kinono-logo" height="89px">
+                <div class="row_serials_secmenu_trailer_div">
+                    <video autoplay loop muted class="row_serials_secmenu_trailer" src="./images/tras2.webm" alt="kinono-trailer" height="240px"></video>
+                    <a class="row_serials_secmenu_trailer_link">Peaky Blinders </a>
+                </div>
+            </div>
+        </div>
+        <main>
+            <div class="swiper popularSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="popularSwiperVideo">
+                            <video class="popularSwiperVideo-video" loop src="./images/Её заветное желание — Русский трейлер (2021) (online-video-cutter.com).webm" alt="kinono-trailer" ></video>
+                            <div class="popularSwiperVideoPlayer">
+                                <h3 class="popularSwiperVideoPlayerH3">Её заветное желание (2021)</h3>
+                                <div class="popularSwiperVideoPlayerControlers">
+                                    <button id="popularSwiperVideoPlayerButton"><i class="fa-solid fa-circle-play"></i></button> 
+                                    <input type="range" class="popularSwiperVideoPlayerSlider" value="0" />
+                                    <p class="timer"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="popularSwiperVideo">
+                            <video class="popularSwiperVideo-video" loop src="./images/Её заветное желание — Русский трейлер (2021) (online-video-cutter.com).webm" alt="kinono-trailer" ></video>
+                            <div class="popularSwiperVideoPlayer">
+                                <h3 class="popularSwiperVideoPlayerH3">Её заветное желание (2021)</h3>
+                                <div class="popularSwiperVideoPlayerControlers">
+                                    <button id="popularSwiperVideoPlayerButton"><i class="fa-solid fa-circle-play"></i></button> 
+                                    <input type="range" class="popularSwiperVideoPlayerSlider" value="0" />
+                                    <p class="timer"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="popularSwiperButtonNext" class="swiper-button-next"></div>
+                <div id="popularSwiperButtonPrev" class="swiper-button-prev"></div>
+            </div>
+            <div class="popular_h2">
+                <h2>Popular now &nbsp</h2><i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div class="swiper dlin recomendationSwiper">
+                <div id="recomandation" class="swiper-wrapper">
+                    <template id="swiper-slide-template">
+                        <div class="swiper-slide">
+                            <div class="film_card">
+                                <div class="film_card_content">
+                                    <img class="film_card_image" src="" alt="film_image">
+                                    <div class="film_card_mini">
+                                        <div class="film_card_mini_buttons">
+                                            <div class="film_card_mini_buttons_izbrannoye"><i class="fa-regular fa-bookmark"></i></div>
+                                            <div class="film_card_mini_buttons_poxojeyee"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                                        </div>
+                                        <div class="film_card_mini_info">
+                                            <div class="counter" data-cp-percentage="" data-cp-color="">
+                                                <span class="percentage"></span>
+                                                <canvas class="circleProgressCanvas" width="50" height="50" style="height: 150px; width: 150px;"></canvas>
+                                            </div>
+                                            <div class="film_card_mini_info_country">
+                                                <p class="film_card_mini_info_country_p"></p>
+                                            </div>
+                                            <div class="film_card_mini_info_date">
+                                                <time class="film_card_mini_info_date_p"></time><p class="film_card_mini_info_time_p"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="film_card_name"><a class="film_card_name_text"></a></div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+                <div class="swiper-scrollbar"></div>
+                <div id="recomendationSwiperButtonNext" class="swiper-button-next"></div>
+                <div id="recomendationSwiperButtonPrev" class="swiper-button-prev"></div>
+            </div>
+            <div class="popular_h2">
+                <h2>TV Recomandation &nbsp</h2><i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div class="swiper dlin tvSwiper">
+                <div id="tv" class="swiper-wrapper">
+                    <template id="swiper-slide-template">
+                        <div class="swiper-slide">
+                            <div class="film_card">
+                                <div class="film_card_content">
+                                    <img class="film_card_image" src="" alt="film_image">
+                                    <div class="film_card_mini">
+                                        <div class="film_card_mini_buttons">
+                                            <div class="film_card_mini_buttons_izbrannoye"><i class="fa-regular fa-bookmark"></i></div>
+                                            <div class="film_card_mini_buttons_poxojeyee"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                                        </div>
+                                        <div class="film_card_mini_info">
+                                            <div class="counter" data-cp-percentage="" data-cp-color="">
+                                                <span class="percentage"></span>
+                                                <canvas class="circleProgressCanvas" width="50" height="50" style="height: 150px; width: 150px;"></canvas>
+                                            </div>
+                                            <div class="film_card_mini_info_country">
+                                                <p class="film_card_mini_info_country_p"></p>
+                                            </div>
+                                            <div class="film_card_mini_info_date">
+                                                <time class="film_card_mini_info_date_p"></time><p class="film_card_mini_info_time_p"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="film_card_name"><a class="film_card_name_text"></a></div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+                <div class="swiper-scrollbar"></div>
+                <div id="tvSwiperButtonNext" class="swiper-button-next"></div>
+                <div id="tvSwiperButtonPrev" class="swiper-button-prev"></div>
+            </div>
+        </main>
+        <footer>
+        </footer>
+        
+    </div>
+</body>
+</html>
